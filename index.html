@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>富國島 5 天 4 夜旅遊行程表 (10/20～10/24)</title>
+  <style>
+    :root {
+      --primary-color: #0077b6;
+      --secondary-color: #00b4d8;
+      --bg-color: #f4f7f6;
+      --card-bg: #ffffff;
+      --text-color: #2b2d42;
+      --accent-color: #e63946;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      margin: 0;
+      padding: 20px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+
+    header h1 {
+      margin: 0 0 10px 0;
+      font-size: 2rem;
+    }
+
+    .toolbar {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-bottom: 25px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      background-color: var(--primary-color);
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    .btn:hover {
+      background-color: #005f87;
+      transform: translateY(-2px);
+    }
+
+    .btn-danger {
+      background-color: var(--accent-color);
+    }
+
+    .btn-danger:hover {
+      background-color: #c1121f;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 25px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .card h2 {
+      color: var(--primary-color);
+      border-bottom: 2px solid var(--secondary-color);
+      padding-bottom: 8px;
+      margin-top: 0;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #e0e0e0;
+    }
+
+    th {
+      background-color: #f8f9fa;
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+
+    [contenteditable="true"] {
+      outline: none;
+      padding: 2px 4px;
+      border-radius: 4px;
+      transition: background-color 0.2s;
+    }
+
+    [contenteditable="true"]:hover {
+      background-color: #eef7fc;
+      cursor: pointer;
+    }
+
+    [contenteditable="true"]:focus {
+      background-color: #fff9db;
+      box-shadow: 0 0 0 2px #ffe066;
+    }
+
+    .notice-box {
+      background-color: #eef9ff;
+      border-left: 4px solid var(--secondary-color);
+      padding: 15px;
+      border-radius: 0 8px 8px 0;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 10px; }
+      th, td { padding: 8px; font-size: 0.9rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <header>
+    <h1 contenteditable="true" id="title">富國島 5 天 4 夜每日行程表</h1>
+    <p contenteditable="true" id="subtitle">日期：10/20（二）～ 10/24（六）</p>
+  </header>
+
+  <div class="toolbar">
+    <button class="btn" onclick="saveData()">💾 儲存修改</button>
+    <button class="btn" onclick="downloadHTML()">📥 匯出為 HTML 網頁</button>
+    <button class="btn btn-danger" onclick="resetData()">🔄 重置預設行程</button>
+  </div>
+
+  <div id="editable-content">
+    <!-- 行程總覽 -->
+    <div class="card">
+      <h2 contenteditable="true">📌 每日行程總覽</h2>
+      <table>
+        <thead>
+          <tr>
+            <th contenteditable="true">日期</th>
+            <th contenteditable="true">主題</th>
+            <th contenteditable="true">行程強度</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td contenteditable="true">10/20</td><td contenteditable="true">抵達、夜市</td><td contenteditable="true">輕鬆</td></tr>
+          <tr><td contenteditable="true">10/21</td><td contenteditable="true">香島纜車、水上樂園、金橋</td><td contenteditable="true">最滿的一天</td></tr>
+          <tr><td contenteditable="true">10/22</td><td contenteditable="true">拍照、咖啡廳、放空</td><td contenteditable="true">輕鬆</td></tr>
+          <tr><td contenteditable="true">10/23</td><td contenteditable="true">換住宿、享受飯店</td><td contenteditable="true">輕鬆</td></tr>
+          <tr><td contenteditable="true">10/24</td><td contenteditable="true">早餐、搭機返台</td><td contenteditable="true">以交通為主</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Day 1 -->
+    <div class="card">
+      <h2 contenteditable="true">Day 1｜10/20（二）抵達富國島・日落小鎮</h2>
+      <table>
+        <thead>
+          <tr><th style="width:25%" contenteditable="true">時間</th><th style="width:45%" contenteditable="true">行程</th><th style="width:30%" contenteditable="true">備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td contenteditable="true">14:10</td><td contenteditable="true">台北出發</td><td contenteditable="true">直飛富國島</td></tr>
+          <tr><td contenteditable="true">16:50</td><td contenteditable="true">抵達富國島機場</td><td contenteditable="true">領取托運行李、準備網路</td></tr>
+          <tr><td contenteditable="true">17:30–18:30</td><td contenteditable="true">搭 Grab 前往 Lucy 民宿</td><td contenteditable="true">車程依交通狀況調整</td></tr>
+          <tr><td contenteditable="true">18:30–19:00</td><td contenteditable="true">入住、整理行李</td><td contenteditable="true">先休息一下</td></tr>
+          <tr><td contenteditable="true">19:00–20:30</td><td contenteditable="true">日落小鎮夜市覓食</td><td contenteditable="true">VUI-Fest Bazaar 一帶</td></tr>
+          <tr><td contenteditable="true">20:30–21:00</td><td contenteditable="true">散步、拍照</td><td contenteditable="true">看體力決定要不要多逛</td></tr>
+          <tr><td contenteditable="true">21:00 後</td><td contenteditable="true">回民宿休息</td><td contenteditable="true">為隔天的活動養足精神</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Day 2 -->
+    <div class="card">
+      <h2 contenteditable="true">Day 2｜10/21（三）香島纜車・水上樂園・金橋</h2>
+      <table>
+        <thead>
+          <tr><th style="width:25%" contenteditable="true">時間</th><th style="width:45%" contenteditable="true">行程</th><th style="width:30%" contenteditable="true">備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td contenteditable="true">08:00–09:00</td><td contenteditable="true">起床、早餐</td><td contenteditable="true">不用太早趕出門</td></tr>
+          <tr><td contenteditable="true">09:00–10:00</td><td contenteditable="true">前往香島纜車站</td><td contenteditable="true">預留交通時間</td></tr>
+          <tr><td contenteditable="true">上午</td><td contenteditable="true">搭乘香島跨海纜車</td><td contenteditable="true">欣賞海景、拍照</td></tr>
+          <tr><td contenteditable="true">10:30–14:00</td><td contenteditable="true">Aquatopia 水上樂園</td><td contenteditable="true">依天氣、體力調整</td></tr>
+          <tr><td contenteditable="true">14:00–15:30</td><td contenteditable="true">午餐、休息、返回南島</td><td contenteditable="true">留意末班交通與園區時間</td></tr>
+          <tr><td contenteditable="true">15:30–17:00</td><td contenteditable="true">回民宿洗澡、休息</td><td contenteditable="true">玩水後記得補水</td></tr>
+          <tr><td contenteditable="true">日落前</td><td contenteditable="true">Kiss Bridge 金橋</td><td contenteditable="true">拍照、看夕陽</td></tr>
+          <tr><td contenteditable="true">晚上</td><td contenteditable="true">晚餐、Kiss of the Sea 表演</td><td contenteditable="true">演出與煙火須確認當日場次</td></tr>
+          <tr><td contenteditable="true">21:00 後</td><td contenteditable="true">回民宿</td><td contenteditable="true">太累就提早回去</td></tr>
+        </tbody>
+      </table>
+      <div class="notice-box" contenteditable="true">
+        ☔ <strong>雨天備案</strong>：如果雨勢大、海象不佳或纜車停駛，就改成日落小鎮室內咖啡廳、商店和晚餐；不要為了完成行程勉強出海或玩水。
+      </div>
+    </div>
+
+    <!-- Day 3 -->
+    <div class="card">
+      <h2 contenteditable="true">Day 3｜10/22（四）日落小鎮慢旅行・咖啡廳放空</h2>
+      <table>
+        <thead>
+          <tr><th style="width:25%" contenteditable="true">時間</th><th style="width:45%" contenteditable="true">行程</th><th style="width:30%" contenteditable="true">備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td contenteditable="true">09:00–10:00</td><td contenteditable="true">自然醒、早餐</td><td contenteditable="true">不設鬧鐘也可以</td></tr>
+          <tr><td contenteditable="true">10:00–12:00</td><td contenteditable="true">日落小鎮街景拍照</td><td contenteditable="true">慢慢走，不必追景點</td></tr>
+          <tr><td contenteditable="true">12:00–13:00</td><td contenteditable="true">午餐</td><td contenteditable="true">選附近餐廳</td></tr>
+          <tr><td contenteditable="true">13:00–15:00</td><td contenteditable="true">咖啡廳看書、畫畫</td><td contenteditable="true">留給自己一段安靜時間</td></tr>
+          <tr><td contenteditable="true">15:00–17:00</td><td contenteditable="true">逛街、補拍照片</td><td contenteditable="true">依天氣決定</td></tr>
+          <tr><td contenteditable="true">傍晚</td><td contenteditable="true">看夕陽</td><td contenteditable="true">找喜歡的角度即可</td></tr>
+          <tr><td contenteditable="true">晚上</td><td contenteditable="true">晚餐、自由活動</td><td contenteditable="true">可再次逛夜市</td></tr>
+          <tr><td contenteditable="true">21:00 後</td><td contenteditable="true">回民宿整理行李</td><td contenteditable="true">隔天要更換住宿</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Day 4 -->
+    <div class="card">
+      <h2 contenteditable="true">Day 4｜10/23（五）最後散步・入住 SOL 飯店</h2>
+      <table>
+        <thead>
+          <tr><th style="width:25%" contenteditable="true">時間</th><th style="width:45%" contenteditable="true">行程</th><th style="width:30%" contenteditable="true">備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td contenteditable="true">09:00</td><td contenteditable="true">起床、早餐</td><td contenteditable="true">不必太早</td></tr>
+          <tr><td contenteditable="true">10:00–11:00</td><td contenteditable="true">整理行李、退房</td><td contenteditable="true">先詢問民宿能否寄放行李</td></tr>
+          <tr><td contenteditable="true">11:00–12:30</td><td contenteditable="true">最後逛日落小鎮</td><td contenteditable="true">不安排遠距離景點</td></tr>
+          <tr><td contenteditable="true">12:30–13:30</td><td contenteditable="true">午餐</td><td contenteditable="true">吃完再出發</td></tr>
+          <tr><td contenteditable="true">約 14:00</td><td contenteditable="true">Grab 前往 SOL 飯店</td><td contenteditable="true">依實際交通調整</td></tr>
+          <tr><td contenteditable="true">約 15:00</td><td contenteditable="true">SOL 飯店入住</td><td contenteditable="true">確認隔天機場接駁</td></tr>
+          <tr><td contenteditable="true">15:30–17:30</td><td contenteditable="true">飯店休息、泳池或海邊</td><td contenteditable="true">依天氣和飯店設施安排</td></tr>
+          <tr><td contenteditable="true">晚上</td><td contenteditable="true">飯店晚餐或附近用餐</td><td contenteditable="true">早點休息、整理行李</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Day 5 -->
+    <div class="card">
+      <h2 contenteditable="true">Day 5｜10/24（六）早餐・返回台灣</h2>
+      <table>
+        <thead>
+          <tr><th style="width:25%" contenteditable="true">時間</th><th style="width:45%" contenteditable="true">行程</th><th style="width:30%" contenteditable="true">備註</th></tr>
+        </thead>
+        <tbody>
+          <tr><td contenteditable="true">07:00</td><td contenteditable="true">飯店早餐</td><td contenteditable="true">以飯店當日供應時間為準</td></tr>
+          <tr><td contenteditable="true">約 08:00–09:00</td><td contenteditable="true">飯店接駁前往機場</td><td contenteditable="true">務必事先確認班次與抵達時間</td></tr>
+          <tr><td contenteditable="true">抵達機場後</td><td contenteditable="true">報到、托運行李、安檢</td><td contenteditable="true">11:30 起飛，建議預留充足時間</td></tr>
+          <tr><td contenteditable="true">11:30</td><td contenteditable="true">富國島起飛</td><td contenteditable="true">直飛台北</td></tr>
+          <tr><td contenteditable="true">16:10</td><td contenteditable="true">抵達台灣</td><td contenteditable="true">行程結束</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 提醒事項 -->
+    <div class="card">
+      <h2 contenteditable="true">💡 特別提醒與建議</h2>
+      <ul>
+        <li contenteditable="true"><strong>SOL 飯店接駁車</strong>：接駁車約每 3 小時一班。因為回程是 11:30 起飛，請務必先向飯店確認是否有合適的班次，切勿只憑早餐 07:00 開始就假設能趕上接駁。</li>
+        <li contenteditable="true"><strong>行程節奏</strong>：建議將 10/21 當作唯一比較充實的一天，其他天保留彈性。獨自旅行不需要將每小時塞滿，安心用餐、拍照與休息才是最棒的體驗。</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<script>
+  const STORAGE_KEY = 'phu_quoc_itinerary_html';
+
+  // 頁面載入時讀取已儲存的內容
+  window.addEventListener('DOMContentLoaded', () => {
+    const savedData = localStorage.getItem(STORAGE_KEY);
+    if (savedData) {
+      document.getElementById('editable-content').innerHTML = savedData;
+    }
+  });
+
+  // 儲存修改至 LocalStorage
+  function saveData() {
+    const content = document.getElementById('editable-content').innerHTML;
+    localStorage.setItem(STORAGE_KEY, content);
+    alert('已成功儲存您的修改內容！');
+  }
+
+  // 重置為預設行程
+  function resetData() {
+    if (confirm('確定要還原為初始預設行程嗎？所有尚未匯出的修改將會清除。')) {
+      localStorage.removeItem(STORAGE_KEY);
+      location.reload();
+    }
+  }
+
+  // 下載目前最新內容為 HTML 檔案
+  function downloadHTML() {
+    const fullHtml = '<!DOCTYPE html>\n' + document.documentElement.outerHTML;
+    const blob = new Blob([fullHtml], { type: 'text/html' });
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'phu_quoc_trip_edited.html';
+    a.click();
+  }
+</script>
+
+</body>
+</html>
